@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="CV Aditya Andesmal, mahasiswa Sistem Informasi ITEBA.">
+  <title>Aditya Andesmal | CV</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #20342f;
+      --muted: #64736d;
+      --paper: #f7f8f3;
+      --surface: #fffefa;
+      --line: #dce3db;
+      --green: #376b56;
+      --green-light: #e6eee6;
+      --coral: #c5684d;
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: "Avenir Next", Avenir, "Segoe UI", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      line-height: 1.65;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .page {
+      width: min(100% - 48px, 1040px);
+      margin: 0 auto;
+    }
+
+    .topbar {
+      min-height: 78px;
+      padding: 12px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .mark {
+      color: var(--green);
+      font-family: var(--serif);
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: 0;
+      text-decoration: none;
+    }
+
+    .mark img {
+      display: block;
+      width: 66px;
+      height: 88px;
+      border-radius: 2px;
+      object-fit: cover;
+      border: 2px solid var(--green);
+    }
+
+    .topbar span {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 260px;
+      gap: 64px;
+      align-items: end;
+      padding: 88px 0 76px;
+      animation: arrive 650ms ease-out both;
+    }
+
+    .eyebrow,
+    .section-label {
+      margin: 0 0 14px;
+      color: var(--coral);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      max-width: 720px;
+      margin-bottom: 22px;
+      font-family: var(--serif);
+      font-size: clamp(54px, 8vw, 92px);
+      font-weight: 400;
+      letter-spacing: 0;
+      line-height: 0.98;
+    }
+
+    .intro {
+      max-width: 590px;
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .quick-facts {
+      padding: 22px 0 4px 24px;
+      border-left: 2px solid var(--green);
+    }
+
+    .quick-facts div + div {
+      margin-top: 19px;
+    }
+
+    .quick-facts dt {
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .quick-facts dd {
+      margin: 3px 0 0;
+      font-size: 14px;
+      overflow-wrap: anywhere;
+    }
+
+    .quick-facts a {
+      color: var(--green);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    .content {
+      border-top: 1px solid var(--line);
+    }
+
+    .section {
+      display: grid;
+      grid-template-columns: 220px minmax(0, 1fr);
+      gap: 36px;
+      padding: 38px 0 42px;
+      border-bottom: 1px solid var(--line);
+      scroll-margin-top: 24px;
+    }
+
+    .section-label {
+      margin: 4px 0 0;
+    }
+
+    .section h2 {
+      margin-bottom: 8px;
+      font-family: var(--serif);
+      font-size: 28px;
+      font-weight: 400;
+      line-height: 1.2;
+    }
+
+    .section p {
+      max-width: 610px;
+      margin-bottom: 0;
+      color: var(--muted);
+    }
+
+    .entry + .entry {
+      margin-top: 26px;
+    }
+
+    .section .entry h2 {
+      font-size: 22px;
+    }
+
+    .section .role {
+      margin-bottom: 6px;
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .skills li {
+      padding: 6px 13px;
+      background: var(--green-light);
+      color: var(--green);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .contact-links {
+      display: grid;
+      grid-template-columns: auto auto;
+      gap: 10px;
+    }
+
+    .contact-links a {
+      text-align: center;
+    }
+
+    .contact .linkedin {
+      grid-column: 2;
+      background: #0a66c2;
+    }
+
+    .contact .linkedin:hover,
+    .contact .linkedin:focus-visible {
+      background: #004182;
+    }
+
+    .contact {
+      margin: 54px 0 62px;
+      padding: 30px 34px;
+      background: var(--green-light);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      scroll-margin-top: 24px;
+    }
+
+    .contact h2 {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: 26px;
+      font-weight: 400;
+    }
+
+    .contact a {
+      display: inline-block;
+      padding: 11px 16px;
+      background: var(--green);
+      color: white;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background-color 160ms ease;
+    }
+
+    .contact a:hover,
+    .contact a:focus-visible {
+      background: var(--ink);
+    }
+
+    footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 0 0 28px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    footer a {
+      color: var(--green);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    footer a:hover,
+    footer a:focus-visible {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    @keyframes arrive {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 680px) {
+      .page {
+        width: min(100% - 36px, 520px);
+      }
+
+      .topbar {
+        min-height: 66px;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 34px;
+        padding: 62px 0 50px;
+      }
+
+      h1 {
+        font-size: 62px;
+      }
+
+      .quick-facts {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+        padding: 16px 0 0;
+        border-top: 1px solid var(--line);
+        border-left: 0;
+      }
+
+      .quick-facts div + div {
+        margin-top: 0;
+      }
+
+      .section {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        padding: 28px 0 32px;
+      }
+
+      .contact-links {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .contact {
+        align-items: flex-start;
+        flex-direction: column;
+        margin: 38px 0 48px;
+        padding: 24px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    @media print {
+      body { background: white; }
+      .page { width: 100%; }
+      .contact { background: white; border: 1px solid var(--line); }
+      .contact a { color: var(--ink); background: white; padding: 0; }
+      .topbar { min-height: 54px; }
+      .hero { padding: 46px 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <a class="mark" href="#profil" aria-label="Aditya Andesmal, kembali ke profil"><img src="data:image/jpeg;base64,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" alt="Foto Aditya Andesmal"></a>
+      <span>2521041</span>
+    </header>
+
+    <main>
+      <section class="hero" id="profil" aria-labelledby="nama">
+        <div>
+          <p class="eyebrow">Mahasiswa Sistem Informasi</p>
+          <h1 id="nama">Aditya<br>Andesmal</h1>
+          <p class="intro">Mahasiswa Sistem Informasi dengan pengalaman kerja di bidang IT support dan produksi. Mudah beradaptasi dan terbiasa bekerja dalam tim maupun mandiri.</p>
+        </div>
+        <dl class="quick-facts">
+          <div>
+            <dt>Status</dt>
+            <dd>Sedang berkuliah di ITEBA</dd>
+          </div>
+          <div>
+            <dt>Domisili</dt>
+            <dd>Sekupang, Batam</dd>
+          </div>
+          <div>
+            <dt>Email</dt>
+            <dd><a href="mailto:adityaandesmali@gmail.com">adityaandesmali@gmail.com</a></dd>
+          </div>
+          <div>
+            <dt>WhatsApp</dt>
+            <dd><a href="https://wa.me/6281276552990" target="_blank" rel="noopener">0812-7655-2990</a></dd>
+          </div>
+        </dl>
+      </section>
+
+      <div class="content">
+        <section class="section" id="pendidikan" aria-labelledby="judul-pendidikan">
+          <p class="section-label">01 / Pendidikan</p>
+          <div>
+            <div class="entry">
+              <h2 id="judul-pendidikan">Institut Teknologi Batam (ITEBA)</h2>
+              <p>Program Studi Sistem Informasi. Saat ini masih aktif berkuliah.</p>
+            </div>
+            <div class="entry">
+              <h2>SMA Negeri 24 Batam</h2>
+              <p>Lulus tahun 2025.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="pengalaman" aria-labelledby="judul-pengalaman">
+          <p class="section-label">02 / Pengalaman</p>
+          <div>
+            <div class="entry">
+              <h2 id="judul-pengalaman">IT Support</h2>
+              <p class="role">RS Bhayangkara Batam</p>
+              <p>Menangani dan merawat perangkat software maupun hardware.</p>
+            </div>
+            <div class="entry">
+              <h2>Operator Produksi</h2>
+              <p class="role">PT Celluler Workshop</p>
+              <p>Memproduksi rokok elektrik dan mengerjakan seluruh tahap dari pembuatan sampai siap dikemas. Target perorangan 1.000+ per hari selalu tercapai.</p>
+            </div>
+            <div class="entry">
+              <h2>Operator Mesin Bor Hidrolik</h2>
+              <p class="role">Essun, pengolahan limbah elektronik</p>
+              <p>Membongkar dan memilah komponen (PCB, besi, kabel, dan lainnya) sesuai tempat yang ditentukan perusahaan.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="keahlian" aria-labelledby="judul-keahlian">
+          <p class="section-label">03 / Keahlian</p>
+          <div>
+            <h2 id="judul-keahlian" class="sr-only" hidden>Keahlian</h2>
+            <ul class="skills">
+              <li>Maintenance hardware &amp; software</li>
+              <li>Soldering</li>
+              <li>Desain grafis</li>
+              <li>Komunikasi tim</li>
+              <li>Kerja tim &amp; mandiri</li>
+              <li>Mudah beradaptasi</li>
+              <li>Pekerja keras</li>
+              <li>Siap shift &amp; lembur</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="section" id="sertifikat" aria-labelledby="judul-sertifikat">
+          <p class="section-label">04 / Sertifikat</p>
+          <div>
+            <h2 id="judul-sertifikat">Desain Grafis</h2>
+            <p>Kalala Institut, melalui Disnaker Batam.</p>
+          </div>
+        </section>
+      </div>
+
+      <section class="contact" id="kontak" aria-labelledby="judul-kontak">
+        <h2 id="judul-kontak">Mari terhubung.</h2>
+        <div class="contact-links">
+          <a href="mailto:adityaandesmali@gmail.com">adityaandesmali@gmail.com</a>
+          <a href="https://wa.me/6281276552990" target="_blank" rel="noopener">0812-7655-2990</a>
+          <a class="linkedin" href="https://www.linkedin.com/in/aditya-andesmal-876120399" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>Aditya Andesmal · CV</span>
+      <a href="https://wa.me/6281276552990" target="_blank" rel="noopener">Chat via WhatsApp</a>
+    </footer>
+  </div>
+</body>
+</html>
